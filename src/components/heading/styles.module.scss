@@ -1,0 +1,60 @@
+@use "./variables" as *;
+
+.heading {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0.5em 1em;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .onNarrowVisible {
+    display: none;
+  }
+
+  @media screen and (width <= 760px) {
+    > form {
+      display: none;
+    }
+
+    > nav li {
+      display: none;
+    }
+
+    .alwaysVisible,
+    .onNarrowVisible {
+      display: block;
+    }
+  }
+
+  > h1 {
+    font-size: 1.5em;
+    font-weight: 900;
+  }
+
+  > h1,
+  > form {
+    flex: auto;
+  }
+
+  input {
+    appearance: none;
+    font: inherit;
+    border-radius: 2em;
+    border: none;
+    background-color: $input-color;
+    padding: 0.25em;
+
+    &:focus {
+      outline-width: 1px;
+    }
+  }
+
+  > nav > ul {
+    display: flex;
+    gap: 1em;
+  }
+}
