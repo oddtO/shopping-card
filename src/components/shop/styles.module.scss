@@ -1,0 +1,95 @@
+@use "../../sass/height-till-endscreen" as *;
+@use "../heading/variables" as *;
+
+.categoriesWrapper,
+.itemsWrapper {
+  visibility: visible;
+}
+
+.shopWrapper {
+  @include height-till-endscreen(
+    $cancel-selector: "#{&}:has(.itemsWrapper > ul:not(:empty))"
+  );
+
+  box-shadow: inset 0 10px 15px -10px #b4b4b4;
+  display: flex;
+}
+
+.categoriesWrapper {
+  border: 1px solid #000;
+
+  > .categories {
+    position: sticky;
+    top: 8%;
+
+    > h2 {
+      font-size: 1.5em;
+      font-weight: 900;
+      position: relative;
+      left: -0.3em;
+    }
+  }
+
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding-top: 2em;
+  padding-right: 5em;
+
+  @media screen and (width <= 68em) {
+    padding-right: 5%;
+    padding-left: 1em;
+  }
+
+  li {
+    padding-top: 1.5em;
+  }
+
+  flex: 0.85;
+}
+
+.itemsWrapper {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  padding: 2em 2em 2em 1em;
+  gap: 1em;
+  height: auto;
+
+  > h3 {
+    font-weight: 900;
+  }
+
+  > form {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5em;
+
+    > select {
+      padding: 0.3em;
+      font-size: 1.05em;
+      border: 1px solid #bebebe;
+      background-color: #f5f5ff;
+      border-radius: 0.5em;
+    }
+  }
+
+  > ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+
+    $item-width: 18em;
+
+    > li {
+      border: 1px solid #000;
+      width: $item-width;
+      height: $item-width / 0.8;
+      background-color: green;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

@@ -4,13 +4,14 @@ import { useState } from "react";
 import Heading from "./components/heading/component";
 import Main from "./components/main/component";
 import Footer from "./components/footer/component";
+import Shop from "./components/shop/component";
 function App() {
   // const { success, products } = useProducts();
 
   return (
     <>
       <Heading />
-      <Main />
+      <Shop />
       <Footer />
     </>
   );

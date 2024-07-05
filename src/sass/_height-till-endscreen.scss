@@ -1,0 +1,19 @@
+@use "../components/heading/variables" as *;
+@use "sass:selector";
+
+@mixin height-till-endscreen($cancel-selector: null) {
+  @media screen and (width <= 90em) {
+    min-height: 35em;
+  }
+
+  min-height: 28em;
+  max-height: 50em;
+  height: calc(100vh - #{$heading-input-size + $heading-padding * 2});
+
+  @if $cancel-selector {
+    @at-root #{$cancel-selector} {
+      height: unset;
+      max-height: none;
+    }
+  }
+}

@@ -1,4 +1,5 @@
 @use "../heading/variables" as *;
+@use "../../sass/height-till-endscreen" as *;
 
 .introText {
   display: flex;
@@ -81,12 +82,12 @@
   max-width: 120em;
   background-color: $input-color;
 
-  @media screen and (width <= 90em) {
+  /* @media screen and (width <= 90em) {
     min-height: 35em;
   }
 
   min-height: 28em;
-  max-height: 50em;
+  max-height: 50em; */
 
   br {
     display: none;
@@ -119,7 +120,9 @@
     }
   }
 
-  height: calc(100vh - #{$heading-input-size + $heading-padding * 2});
+  @include height-till-endscreen;
+
+  /* height: calc(100vh - #{$heading-input-size + $heading-padding * 2}); */
 
   > * {
     flex: 1;
