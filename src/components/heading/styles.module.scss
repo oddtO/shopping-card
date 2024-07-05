@@ -4,7 +4,7 @@
   background-color: #fff;
   display: flex;
   align-items: center;
-  padding: 0.5em 1em;
+  padding: $heading-padding;
 
   a {
     text-decoration: none;
@@ -47,6 +47,8 @@
     border: none;
     background-color: $input-color;
     padding: 0.25em;
+    width: 16em;
+    height: $heading-input-size;
 
     &:focus {
       outline-width: 1px;

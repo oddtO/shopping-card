@@ -1,0 +1,14 @@
+.stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  > p:first-child {
+    font-size: 2.2em;
+    font-weight: 900;
+  }
+
+  > p:nth-child(2) {
+    font-size: 0.9em;
+  }
+}
