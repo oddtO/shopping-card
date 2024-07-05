@@ -7,7 +7,7 @@ export default function Main() {
         <div className={styles.introText}>
           <h2>
             Find Products That
-            <br /> Matches Your Style
+            <br /> Match Your Style
           </h2>
           <p>
             Browse through our diverse range of meticulously crafted garments,
