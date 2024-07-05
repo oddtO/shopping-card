@@ -1,3 +1,95 @@
+@use "../heading/variables" as *;
+
 .footer {
   flex: auto;
+  display: flex;
+  background-color: #000;
+  color: #fff;
+
+  $padding-vertical: 2.5em;
+
+  padding: $padding-vertical 5em;
+
+  @media screen and (width <= 48em) {
+    flex-direction: column;
+    padding: $padding-vertical 2em;
+
+    > .description > p {
+      max-width: none;
+    }
+
+    > .allLinks {
+      width: 20em;
+    }
+  }
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  flex: auto;
+  padding-top: 2em;
+
+  > h3 {
+    font-weight: 900;
+    font-size: 2.5em;
+  }
+
+  > p {
+    max-width: 50%;
+  }
+
+  > ul {
+    display: flex;
+    gap: 1em;
+
+    > li {
+      background-color: #fff;
+      width: 2em;
+      height: 2em;
+      border-radius: 20em;
+      color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.description,
+.allLinks,
+.linkGroup {
+  visibility: visible;
+}
+
+.linkGroup {
+  display: flex;
+  flex-direction: column;
+
+  $link-group-gap: 1.5em;
+
+  gap: $link-group-gap;
+
+  > h4 {
+    font-weight: 900;
+    font-size: 1.5em;
+  }
+
+  > ul {
+    display: flex;
+    flex-direction: column;
+    gap: $link-group-gap;
+
+    > li {
+      color: #a0a0a0;
+    }
+  }
+}
+
+.allLinks {
+  display: flex;
+  min-width: 16em;
+  padding-top: 1em;
+  justify-content: space-between;
 }
