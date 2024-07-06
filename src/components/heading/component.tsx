@@ -1,9 +1,13 @@
 import styles from "./styles.module.scss";
 import popupStyles from "./popup.module.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Heading() {
   const [popupOpen, setPopupOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = popupOpen ? "hidden" : "auto";
+  }, [popupOpen]);
   return (
     <div className={styles.heading}>
       <h1>Mega Shop</h1>
