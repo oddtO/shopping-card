@@ -1,10 +1,7 @@
 @use "../../sass/height-till-endscreen" as *;
 @use "../heading/variables" as *;
-
-.categoriesWrapper,
-.itemsWrapper {
-  visibility: visible;
-}
+@use "./variables" as *;
+@use "sass:math";
 
 .shopWrapper {
   @include height-till-endscreen(
@@ -13,14 +10,38 @@
 
   box-shadow: inset 0 10px 15px -10px #b4b4b4;
   display: flex;
+
+  @media screen and (width <= 60em) {
+    flex-direction: column;
+
+    .categories {
+      width: 100%;
+
+      > h2 {
+        position: static;
+        text-align: center;
+      }
+
+      > ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 1em;
+        flex-wrap: wrap;
+      }
+    }
+  }
 }
 
+$white-bluesh: #f1f1fb;
+
 .categoriesWrapper {
-  border: 1px solid #000;
+  border: 2px solid $white-bluesh;
 
   > .categories {
     position: sticky;
-    top: 8%;
+    top: 6%;
+    z-index: -1;
 
     > h2 {
       font-size: 1.5em;
@@ -45,14 +66,19 @@
     padding-top: 1.5em;
   }
 
-  flex: 0.85;
+  flex: 0.65;
 }
 
 .itemsWrapper {
   flex: 3;
   display: flex;
   flex-direction: column;
-  padding: 2em 2em 2em 1em;
+  padding: 2em;
+
+  @media screen and (width <= 60em) {
+    padding: 0.3em;
+  }
+
   gap: 1em;
   height: auto;
 
@@ -70,7 +96,7 @@
       padding: 0.3em;
       font-size: 1.05em;
       border: 1px solid #bebebe;
-      background-color: #f5f5ff;
+      background-color: $white-bluesh;
       border-radius: 0.5em;
     }
   }
@@ -78,15 +104,32 @@
   > ul {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 1em;
+
+    @media screen and (width <= $relative-to-screen-threshold) {
+      gap: 2vw;
+    }
 
     $item-width: 18em;
 
     > li {
-      border: 1px solid #000;
+      &:hover {
+        box-shadow: 0 1em 1em #d2d2d2;
+      }
+
+      border-radius: 0.5em;
       width: $item-width;
-      height: $item-width / 0.8;
-      background-color: green;
+      height: $item-width / 0.85;
+
+      @media screen and (width <= $relative-to-screen-threshold) {
+        $small-item-width: 47vw;
+
+        width: $small-item-width;
+        height: $small-item-width / 0.6;
+        font-size: 4vw;
+      }
+
       display: flex;
       justify-content: center;
       align-items: center;

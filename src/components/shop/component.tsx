@@ -1,4 +1,6 @@
 import styles from "./styles.module.scss";
+import ShopItem from "../shop-item/component";
+import DummyImg from "../../assets/81fPKd-2AYL._AC_SL1500_.jpg";
 export default function Shop() {
   return (
     <div className={styles.shopWrapper}>
@@ -6,6 +8,9 @@ export default function Shop() {
         <div className={styles.categories}>
           <h2>Categories</h2>
           <ul>
+            <li>
+              <a href="">All</a>
+            </li>
             <li>
               <a>Electronics</a>
             </li>
@@ -33,7 +38,15 @@ export default function Shop() {
         </form>
         <h3>100 items</h3>
         <ul>
-          <li>0</li>
+          <li>
+            <ShopItem
+              imgSrc={DummyImg}
+              title={"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops"}
+              rating={4.9}
+              ratingCount={323}
+              price={"$100"}
+            />
+          </li>
           <li>1</li>
           <li>2</li>
           <li>3</li>

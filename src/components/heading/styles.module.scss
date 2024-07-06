@@ -4,6 +4,12 @@
   background-color: #fff;
   display: flex;
   align-items: center;
+
+  ul {
+    display: flex;
+    align-items: center;
+  }
+
   padding: $heading-padding;
 
   a {
