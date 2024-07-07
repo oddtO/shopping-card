@@ -1,7 +1,7 @@
 @use "../components/heading/variables" as *;
 @use "sass:selector";
 
-@mixin height-till-endscreen($cancel-selector: null) {
+@mixin height-till-endscreen($cancel-selector: null, $cancel-query: null) {
   @media screen and (width <= 90em) {
     min-height: 35em;
   }
@@ -12,6 +12,13 @@
 
   @if $cancel-selector {
     @at-root #{$cancel-selector} {
+      height: unset;
+      max-height: none;
+    }
+  }
+
+  @if $cancel-query {
+    @media #{$cancel-query} {
       height: unset;
       max-height: none;
     }

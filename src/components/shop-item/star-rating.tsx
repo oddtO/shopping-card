@@ -20,7 +20,11 @@ export default function StarRating({
   return (
     <div className={className}>
       {Array.from({ length: totalStars }, (_, i) => (
-        <Star key={i} filled={i < flooredRating} half={hasHalfStar} />
+        <Star
+          key={i}
+          filled={i < flooredRating}
+          half={hasHalfStar && i < roundedRating}
+        />
       ))}
     </div>
   );

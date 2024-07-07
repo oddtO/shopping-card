@@ -1,5 +1,7 @@
-import styles from "./styles.module.scss";
+import styles, { addToCartBtn } from "./styles.module.scss";
 import StarRating from "./star-rating";
+import RatingInfo from "../rating-info/component";
+import CustomButton from "../custom-button/component";
 export default function ShopItem({
   imgSrc,
   title,
@@ -19,13 +21,9 @@ export default function ShopItem({
         <img src={imgSrc} alt={title} />
         <figcaption>
           <h3>{title}</h3>
-          <p className={styles.ratingInfo}>
-            <StarRating rating={rating} className={styles.stars} />
-            <p className={styles.ratingInfoEstimate}>{rating}</p>
-            <p className={styles.ratingInfoCount}> ({ratingCount})</p>
-          </p>
+          <RatingInfo rating={rating} ratingCount={ratingCount} />
           <p className={styles.price}>{price}</p>
-          <button type="button">Add to cart</button>
+          <CustomButton className={addToCartBtn}>Add to cart</CustomButton>
         </figcaption>
       </figure>
     </div>
