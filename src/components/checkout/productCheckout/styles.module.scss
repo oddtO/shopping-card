@@ -1,0 +1,87 @@
+@use "../-vars.scss" as *;
+
+@mixin smaller-screens() {
+  @media screen and (width <= 64em) {
+    @content;
+  }
+}
+
+.figure {
+  display: flex;
+  padding: 1em;
+
+  > img {
+    width: 7em;
+    object-fit: contain;
+    padding: 1em;
+  }
+
+  > figcaption {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.captionInner {
+  display: flex;
+  flex: 1;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+
+  > h3 {
+    font-weight: 900;
+    font-size: 1.5em;
+    line-height: 1.2;
+  }
+}
+
+.longInfo {
+  flex: 1;
+}
+
+.priceInfo {
+  font-weight: 900;
+  font-size: 1.5em;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 1.25em;
+
+  @include smaller-screens {
+    display: none;
+  }
+}
+
+.lowScreenSizeControls {
+  display: none;
+  justify-content: end;
+  align-items: center;
+  gap: 0.5em;
+  padding-top: 1em;
+
+  @include smaller-screens {
+    display: flex;
+  }
+}
+
+.cancelButton {
+  align-self: end;
+  height: 1.5em;
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quantityInput {
+  font-size: 1em;
+  background-color: $white-bluesh;
+  width: 6em;
+  height: 1.5em;
+}

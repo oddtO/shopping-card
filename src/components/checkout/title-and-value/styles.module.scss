@@ -1,0 +1,16 @@
+@use "../-vars.scss" as *;
+
+.titleAndValueWrapper {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.title {
+  color: var(--primary-field-color, #{$gray-blueish});
+}
+
+.value {
+  font-weight: 900;
+  font-size: 1.25em;
+}

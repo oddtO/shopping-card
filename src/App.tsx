@@ -6,15 +6,14 @@ import Main from "./components/main/component";
 import Footer from "./components/footer/component";
 import Shop from "./components/shop/component";
 import ProductDetailed from "./components/productDetailed/component";
-import StarRating from "./components/shop-item/star-rating";
+import Checkout from "./components/checkout/component";
 function App() {
   // const { success, products } = useProducts();
 
   return (
     <>
       <Heading />
-      <ProductDetailed />
-      <Shop />
+      <Checkout />
       <Footer />
     </>
   );

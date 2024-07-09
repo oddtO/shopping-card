@@ -1,0 +1,41 @@
+.numberInput {
+  font-size: 1em;
+  width: auto;
+  height: auto;
+  border: none;
+  text-align: center;
+  border-radius: 20em;
+
+  > input {
+    border-radius: 20em;
+    appearance: none;
+    text-align: center;
+    border: none;
+  }
+
+  position: relative;
+}
+
+.inputVal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.incBtn,
+.decBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+}
+
+.decBtn {
+  left: 0;
+}
+
+.incBtn {
+  right: 0;
+}
