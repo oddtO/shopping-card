@@ -1,32 +1,42 @@
 import styles from "./styles.module.scss";
 import popupStyles from "./popup.module.scss";
 import { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 export default function Heading() {
   const [popupOpen, setPopupOpen] = useState(false);
 
   useEffect(() => {
     document.body.style.overflow = popupOpen ? "hidden" : "auto";
   }, [popupOpen]);
+
+  const closePopup = () => {
+    setPopupOpen(false);
+  };
+
+  const openPopup = () => {
+    setPopupOpen(true);
+  };
   return (
     <div className={styles.heading}>
-      <h1>Mega Shop</h1>
+      <h1>
+        <Link to="/">Mega Shop</Link>
+      </h1>
       <form action="">
         <input type="search" name="product" id="product" />
       </form>
       <nav>
         <ul>
           <li>
-            <a href="#home">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="#about">About</a>
+            <Link to="shop">Shop</Link>
           </li>
           <li className={styles.alwaysVisible}>
-            <a href="#contact">Contact</a>
+            <Link to="checkout">Cart</Link>
           </li>
           <li className={styles.onNarrowVisible}>
-            <button type="button" onClick={() => setPopupOpen(true)}>
+            <button type="button" onClick={openPopup}>
               Menu
             </button>
           </li>
@@ -41,7 +51,7 @@ export default function Heading() {
       >
         <div className={popupStyles.popupContent}>
           <div className={popupStyles.cancelButton}>
-            <button type="button" onClick={() => setPopupOpen(false)}>
+            <button type="button" onClick={closePopup}>
               <img src="" alt="X" />
             </button>
           </div>
@@ -51,10 +61,14 @@ export default function Heading() {
           <nav>
             <ul>
               <li>
-                <a href="#home">Home</a>
+                <Link to="/" onClick={closePopup}>
+                  Home
+                </Link>
               </li>
               <li>
-                <a href="#about">About</a>
+                <Link to="shop" onClick={closePopup}>
+                  Shop
+                </Link>
               </li>
             </ul>
           </nav>
