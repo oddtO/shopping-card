@@ -2,6 +2,7 @@ import styles from "./styles.module.scss";
 import Stat from "../stat/component";
 import AttributedImage from "../attributed-image/component";
 import StylishImg from "../../assets/portrait-young-stylish-girl-model-casual-summer-clothes-brown-hat-with-natural-makeup-glasses-isolated.png";
+import { Link } from "react-router-dom";
 export default function Main() {
   return (
     <div className={styles.introWrapper}>
@@ -16,7 +17,7 @@ export default function Main() {
             designed to bring out your individuality and cater to your sense of
             style.
           </p>
-          <a href="#">Shop Now</a>
+          <Link to="shop">Shop Now</Link>
           <ul>
             <li>
               <Stat
