@@ -1,10 +1,29 @@
 import styles from "./styles.module.scss";
 import popupStyles from "./popup.module.scss";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useRouteLoaderData } from "react-router-dom";
+
+function useCountProductsCount() {
+  const [cartProductsCount, setCartProductsCount] = useState(
+    sessionStorage.length,
+  );
+
+  useEffect(() => {
+    window.addEventListener("storage", updateCartProductsCount);
+
+    return () => window.removeEventListener("storage", updateCartProductsCount);
+  }, []);
+
+  return cartProductsCount;
+  function updateCartProductsCount() {
+    setCartProductsCount(sessionStorage.length);
+  }
+}
 export default function Heading() {
   const [popupOpen, setPopupOpen] = useState(false);
 
+  // const cartProductsCount = useRouteLoaderData("root") as number;
+  const cartProductsCount = useCountProductsCount();
   useEffect(() => {
     document.body.style.overflow = popupOpen ? "hidden" : "auto";
   }, [popupOpen]);
@@ -31,7 +50,9 @@ export default function Heading() {
           </li>
           <li>
             <Link to="shop">Shop</Link>
+            <output data-testid="item-count1">{cartProductsCount}</output>
           </li>
+
           <li className={styles.alwaysVisible}>
             <Link to="checkout">Cart</Link>
           </li>
@@ -69,6 +90,7 @@ export default function Heading() {
                 <Link to="shop" onClick={closePopup}>
                   Shop
                 </Link>
+                <output data-testid="item-count2">{cartProductsCount}</output>
               </li>
             </ul>
           </nav>

@@ -6,5 +6,6 @@ module.exports = {
   ],
   rules: {
     "selector-class-pattern": null,
+    "scss/at-extend-no-missing-placeholder": null,
   },
 };

@@ -6,9 +6,29 @@
   align-items: center;
   padding: $heading-padding;
 
+  nav {
+    height: 2em;
+  }
+
+  li {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
   a {
     text-decoration: none;
     color: inherit;
+
+    &[href="/shop"] + output {
+      position: absolute;
+      bottom: -0.8em;
+      right: -0.3em;
+      background-color: green;
+      color: #fff;
+      border-radius: 200em;
+      padding: 0.3em 0.5em;
+    }
   }
 
   .onNarrowVisible {
@@ -58,5 +78,6 @@
   > nav > ul {
     display: flex;
     gap: 1em;
+    height: 100%;
   }
 }

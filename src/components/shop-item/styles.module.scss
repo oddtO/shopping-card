@@ -13,7 +13,12 @@
 
     > img {
       align-self: center;
-      width: 40%;
+      height: 8em;
+
+      @media screen and (width <= $relative-to-screen-threshold) {
+        height: 5em;
+      }
+
       object-fit: contain;
     }
 
@@ -25,17 +30,28 @@
 
       > h3 {
         padding-top: 1em;
+        min-height: 6em;
         padding-bottom: 0.4em;
       }
     }
   }
 }
 
-.addToCartBtn {
+.addToCartBtnWrapper {
   align-self: end;
 
   @media screen and (width <= $relative-to-screen-threshold) {
     margin-top: 1.2em;
+  }
+}
+
+.removeFromCartBtnWrapper {
+  @extend .addToCartBtnWrapper;
+
+  > button {
+    color: #000;
+    background-color: transparent;
+    border: 1px solid #000;
   }
 }
 

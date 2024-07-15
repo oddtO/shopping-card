@@ -8,6 +8,16 @@
   height: 100%;
   background-color: #fff;
 
+  a[href="/shop"] + output {
+    position: static;
+    font-size: 0.8em;
+  }
+
+  li:has(output) {
+    display: flex;
+    justify-content: space-between;
+  }
+
   input {
     width: 100%;
   }
