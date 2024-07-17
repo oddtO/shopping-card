@@ -12,7 +12,7 @@ import ProductDetailed from "./components/productDetailed/component";
 import Checkout from "./components/checkout/component";
 import shopLoader from "./components/shop/loader.ts";
 import shopAction from "./components/shop/action.ts";
-
+import checkoutLoader from "./components/checkout/loader.ts";
 function cartProductsCountLoader() {
   return sessionStorage.length;
 }
@@ -36,6 +36,6 @@ export const routes = createRoutesFromElements(
       action={shopAction}
     />
     <Route path="shop/:id" element={<ProductDetailed />} />
-    <Route path="checkout" element={<Checkout />} />
+    <Route path="checkout" element={<Checkout />} loader={checkoutLoader} />
   </Route>,
 );

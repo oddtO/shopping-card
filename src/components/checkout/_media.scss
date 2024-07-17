@@ -1,5 +1,11 @@
-@mixin smaller-screens($unit-size: 64em) {
-  @media screen and (width <= #{$unit-size}) {
-    @content;
+@mixin smaller-screens($unit-size: 64em, $is-negative: false) {
+  @if $is-negative {
+    @media screen and not (width <= #{$unit-size}) {
+      @content;
+    }
+  } @else {
+    @media screen and  (width <= #{$unit-size}) {
+      @content;
+    }
   }
 }

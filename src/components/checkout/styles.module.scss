@@ -2,9 +2,11 @@
 @use "./media" as *;
 
 .checkoutPage {
-  @include height-till-endscreen(
-    $cancel-selector: "#{&}[data-is-many-items='true']"
-  );
+  @include smaller-screens($is-negative: true) {
+    @include height-till-endscreen(
+      $cancel-selector: "#{&}[data-should-go-beyond-viewport-height='true']"
+    );
+  }
 
   > h2 {
     font-size: 2em;
@@ -19,6 +21,19 @@
   }
 
   padding: 2em 8em;
+
+  &.emptyCart {
+    padding: 0 {
+      top: 4em;
+    }
+    display: flex;
+    align-items: center;
+
+    > p {
+      font-size: 1.5em;
+      font-weight: 900;
+    }
+  }
 }
 
 .content {

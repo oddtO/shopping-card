@@ -1,4 +1,5 @@
 import styles from "./styles.module.scss";
+import { useId } from "react";
 export default function TitleAndValue({
   className = "",
   title,
@@ -8,10 +9,15 @@ export default function TitleAndValue({
   title: string;
   value: string;
 }) {
+  const id = useId();
   return (
     <div className={styles.titleAndValueWrapper + " " + className}>
-      <p className={styles.title}>{title}</p>
-      <p className={styles.value}>{value}</p>
+      <label htmlFor={id} className={styles.title}>
+        {title}
+      </label>
+      <output id={id} className={styles.value}>
+        {value}
+      </output>
     </div>
   );
 }

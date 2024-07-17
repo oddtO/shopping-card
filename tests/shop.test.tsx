@@ -1,41 +1,14 @@
-import { afterEach, describe, expect, it, vi, Vitest } from "vitest";
-import {
-  cleanup,
-  getAllByRole,
-  render,
-  screen,
-  waitFor,
-} from "@testing-library/react";
+import { describe, expect, it, vi } from "vitest";
+import { render, screen, waitFor } from "@testing-library/react";
 import { createMemoryRouter, RouterProvider } from "react-router-dom";
 import { routes } from "../src/routes.tsx";
-import { Product } from "../src/use-product.tsx";
 import userEvent from "@testing-library/user-event";
 import { products } from "./shop-products.ts";
-
+import { mockedFetch } from "./mocks.ts";
 describe("Shop", () => {
-  const mockedFetch = vi.fn((url: string) => {
-    switch (url) {
-      case "https://fakestoreapi.com/products":
-        return Promise.resolve(createFetchResponse(products));
-      case "https://fakestoreapi.com/products/categories":
-        return Promise.resolve(
-          createFetchResponse([
-            "electronics",
-            "jewelery",
-            "men's clothing",
-            "women's clothing",
-          ]),
-        );
-      default:
-        return Promise.resolve(createFetchResponse([]));
-    }
-  });
   const fetchSpy = vi.spyOn(window, "fetch");
 
   fetchSpy.mockImplementation(mockedFetch as unknown as typeof fetch);
-  function createFetchResponse(data: unknown) {
-    return { json: () => Promise.resolve(data) };
-  }
   function renderComponent() {
     const user = userEvent.setup();
     const router = createMemoryRouter(routes, {
