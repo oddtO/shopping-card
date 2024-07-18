@@ -41,7 +41,6 @@ $white-bluesh: #f1f1fb;
   > .categories {
     position: sticky;
     top: 6%;
-    z-index: -1;
 
     > h2 {
       font-size: 1.5em;
@@ -64,9 +63,24 @@ $white-bluesh: #f1f1fb;
 
   li {
     padding-top: 1.5em;
+    min-width: 10em;
+
+    > * {
+      cursor: pointer;
+      padding: 0.5em 1em;
+      border-radius: 10em;
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
   }
 
   flex: 0.65;
+}
+
+.active {
+  color: white;
+  background-color: black;
 }
 
 .itemsWrapper {
@@ -106,6 +120,14 @@ $white-bluesh: #f1f1fb;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1em;
+
+    &.loading {
+      opacity: 0.1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    transition: opacity 0.2s ease-in-out;
 
     @media screen and (width <= $relative-to-screen-threshold) {
       gap: 2vw;
