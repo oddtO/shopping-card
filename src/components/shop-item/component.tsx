@@ -4,7 +4,7 @@ import RatingInfo from "../rating-info/component";
 import CustomButton from "../custom-button/component";
 import CustomImage from "../custom-image/component";
 import LoadingSpinner from "../../assets/loading-7528_256.gif";
-import { Form, useFetcher } from "react-router-dom";
+import { Link, Form, useFetcher } from "react-router-dom";
 export default function ShopItem({
   id,
   imgSrc,
@@ -28,9 +28,13 @@ export default function ShopItem({
     <div className={styles.item}>
       <figure>
         {/*         <img src={imgSrc} alt={title} /> */}
-        <CustomImage src={imgSrc} alt={title} loaderImg={LoadingSpinner} />
+        <Link className={styles.imgLink} to={`./${id}`}>
+          <CustomImage src={imgSrc} alt={title} loaderImg={LoadingSpinner} />
+        </Link>
         <figcaption>
-          <h3>{title}</h3>
+          <h3>
+            <Link to={`./${id}`}>{title}</Link>
+          </h3>
           <RatingInfo rating={rating} ratingCount={ratingCount} />
           <p className={styles.price}>{price}</p>
 

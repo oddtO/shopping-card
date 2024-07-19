@@ -3,6 +3,8 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
+  useLocation,
+  ScrollRestoration,
 } from "react-router-dom";
 import Heading from "./components/heading/component";
 import Footer from "./components/footer/component";
@@ -13,15 +15,16 @@ import Checkout from "./components/checkout/component";
 import shopLoader from "./components/shop/loader.ts";
 import shopAction from "./components/shop/action.ts";
 import checkoutLoader from "./components/checkout/loader.ts";
-function cartProductsCountLoader() {
-  return sessionStorage.length;
-}
+import productDetailedLoader from "./components/productDetailed/loader.ts";
+import { useEffect } from "react";
+
 function BasicLayout() {
   return (
     <>
       <Heading />
       <Outlet />
       <Footer />
+      <ScrollRestoration />
     </>
   );
 }
@@ -35,7 +38,11 @@ export const routes = createRoutesFromElements(
       loader={shopLoader}
       action={shopAction}
     />
-    <Route path="shop/:id" element={<ProductDetailed />} />
+    <Route
+      path="shop/:id"
+      element={<ProductDetailed />}
+      loader={productDetailedLoader}
+    />
     <Route path="checkout" element={<Checkout />} loader={checkoutLoader} />
   </Route>,
 );

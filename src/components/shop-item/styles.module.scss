@@ -5,22 +5,33 @@
   height: 100%;
   padding: 1em;
 
+  .imgLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    align-self: center;
+    height: 8em;
+
+    @media screen and (width <= $relative-to-screen-threshold) {
+      height: 5em;
+    }
+
+    object-fit: contain;
+  }
+
   > figure {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-
-    > img {
-      align-self: center;
-      height: 8em;
-
-      @media screen and (width <= $relative-to-screen-threshold) {
-        height: 5em;
-      }
-
-      object-fit: contain;
-    }
 
     > figcaption {
       display: flex;

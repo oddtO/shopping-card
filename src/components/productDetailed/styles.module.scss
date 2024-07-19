@@ -25,6 +25,7 @@ $desc-margin: 2em;
     height: fit-content;
     display: flex;
     align-items: center;
+    position: relative;
 
     @include smaller-screens {
       flex-direction: column;
@@ -82,13 +83,35 @@ $desc-margin: 2em;
   border-bottom: 1px solid #000;
 }
 
-.addToCartBtn {
-  width: 70%;
-  border-radius: 20em;
-  align-self: center;
+.addToCartBtnWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  @include smaller-screens {
+  > button {
+    width: 70%;
+    border-radius: 20em;
     align-self: center;
-    margin-right: $desc-margin;
+
+    @include smaller-screens {
+      align-self: center;
+      margin-right: $desc-margin;
+    }
   }
+}
+
+.removeFromCartBtnWrapper {
+  @extend .addToCartBtnWrapper;
+
+  > button {
+    background-color: white;
+    color: black;
+    border: 2px solid #000;
+  }
+}
+
+.goBackLink {
+  position: absolute;
+  top: 2em;
+  left: 1em;
 }
