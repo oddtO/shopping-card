@@ -18,6 +18,7 @@ import shopLoader from "./components/shop/loader.ts";
 import shopAction from "./components/shop/action.ts";
 import checkoutLoader from "./components/checkout/loader.ts";
 import productDetailedLoader from "./components/productDetailed/loader.ts";
+import ErrorPage from "./components/error-page/component.tsx";
 import { useEffect, useRef } from "react";
 
 import LoadingBar, { LoadingBarRef } from "react-top-loading-bar";
@@ -35,9 +36,9 @@ function BasicLayout() {
   }, [navigation.state]);
   return (
     <>
+      <LoadingBar ref={loadingBarRef} color="#f11946" />
       <Heading />
 
-      <LoadingBar ref={loadingBarRef} color="#f11946" />
       <Outlet />
       <Footer />
       <ScrollRestoration />
@@ -47,18 +48,20 @@ function BasicLayout() {
 
 export const routes = createRoutesFromElements(
   <Route path="/" element={<BasicLayout />}>
-    <Route index element={<Main />} />
-    <Route
-      path="shop"
-      element={<Shop />}
-      loader={shopLoader}
-      action={shopAction}
-    />
-    <Route
-      path="shop/:id"
-      element={<ProductDetailed />}
-      loader={productDetailedLoader}
-    />
-    <Route path="checkout" element={<Checkout />} loader={checkoutLoader} />
+    <Route errorElement={<ErrorPage />}>
+      <Route index element={<Main />} />
+      <Route
+        path="shop"
+        element={<Shop />}
+        loader={shopLoader}
+        action={shopAction}
+      />
+      <Route
+        path="shop/:id"
+        element={<ProductDetailed />}
+        loader={productDetailedLoader}
+      />
+      <Route path="checkout" element={<Checkout />} loader={checkoutLoader} />
+    </Route>
   </Route>,
 );

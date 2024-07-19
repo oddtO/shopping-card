@@ -1,0 +1,16 @@
+@use "../../sass/height-till-endscreen.scss" as *;
+
+.errorElement {
+  @include height-till-endscreen;
+
+  display: flex;
+  justify-content: center;
+
+  > p {
+    position: relative;
+    top: 20%;
+    font-size: 2.5em;
+    font-weight: 900;
+    text-align: center;
+  }
+}
