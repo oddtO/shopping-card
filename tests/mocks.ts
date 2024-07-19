@@ -1,8 +1,9 @@
 import { products } from "./shop-products";
 import { vi } from "vitest";
-export const mockedFetch = vi.fn((url: string) => {
+export const mockedFetch = vi.fn((url: string | URL) => {
+  const mockUrl = url.toString().replace(/\?.*/, "");
   const base = "https://fakestoreapi.com/";
-  switch (url) {
+  switch (mockUrl) {
     case base + "products":
       return Promise.resolve(createFetchResponse(products));
     case base + "products/1":

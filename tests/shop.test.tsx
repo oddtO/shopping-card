@@ -69,23 +69,19 @@ describe("Shop", () => {
     const { user } = renderComponent();
     window.sessionStorage.clear();
     const indicator1 = await screen.findByTestId("item-count1");
-    const indicator2 = await screen.findByTestId("item-count2");
 
     expect(indicator1).toHaveTextContent("0");
-    expect(indicator2).toHaveTextContent("0");
 
     const btns = await screen.findAllByRole("button", { name: /add to cart/i });
     const btn = btns[0];
 
     await user.click(btn);
     expect(indicator1).toHaveTextContent("1");
-    expect(indicator2).toHaveTextContent("1");
 
     const btn2 = btns[1];
 
     await user.click(btn2);
     expect(indicator1).toHaveTextContent("2");
-    expect(indicator2).toHaveTextContent("2");
     const btnsRemove = await screen.findAllByRole("button", {
       name: /remove from cart/i,
     });
@@ -94,6 +90,5 @@ describe("Shop", () => {
 
     await user.click(removeBtn);
     expect(indicator1).toHaveTextContent("1");
-    expect(indicator2).toHaveTextContent("1");
   });
 });

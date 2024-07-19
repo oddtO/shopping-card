@@ -32,11 +32,11 @@ export default function Heading() {
           </li>
           <li>
             <Link to="shop">Shop</Link>
-            <output data-testid="item-count1">{cartProductsCount}</output>
           </li>
 
           <li className={styles.alwaysVisible}>
             <Link to="checkout">Cart</Link>
+            <output data-testid="item-count1">{cartProductsCount}</output>
           </li>
           <li className={styles.onNarrowVisible}>
             <button type="button" onClick={openPopup}>
@@ -69,7 +69,6 @@ export default function Heading() {
                 <Link to="shop" onClick={closePopup}>
                   Shop
                 </Link>
-                <output data-testid="item-count2">{cartProductsCount}</output>
               </li>
             </ul>
           </nav>

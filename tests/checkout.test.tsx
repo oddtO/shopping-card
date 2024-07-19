@@ -126,13 +126,10 @@ describe("Checkout (1 item)", () => {
     const item = await getCheckoutItem(products[0]);
 
     const itemCount1 = screen.getByTestId("item-count1");
-    const itemCount2 = screen.getByTestId("item-count2");
 
     expect(itemCount1).toHaveTextContent("1");
-    expect(itemCount2).toHaveTextContent("1");
     await user.click(item.deleteBtn[0]);
     expect(itemCount1).toHaveTextContent("0");
-    expect(itemCount2).toHaveTextContent("0");
 
     testIfItemIsRemoved(item);
 
@@ -142,13 +139,10 @@ describe("Checkout (1 item)", () => {
     const item = await getCheckoutItem(products[0]);
 
     const itemCount1 = screen.getByTestId("item-count1");
-    const itemCount2 = screen.getByTestId("item-count2");
 
     expect(itemCount1).toHaveTextContent("1");
-    expect(itemCount2).toHaveTextContent("1");
     await user.click(item.deleteBtn[1]);
     expect(itemCount1).toHaveTextContent("0");
-    expect(itemCount2).toHaveTextContent("0");
     testIfItemIsRemoved(item);
   });
 });
