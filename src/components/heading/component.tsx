@@ -2,28 +2,13 @@ import styles from "./styles.module.scss";
 import popupStyles from "./popup.module.scss";
 import { useEffect, useState } from "react";
 import { Link, useRouteLoaderData } from "react-router-dom";
+import useCartProductsCount from "./use-cart-products-count";
 
-function useCountProductsCount() {
-  const [cartProductsCount, setCartProductsCount] = useState(
-    sessionStorage.length,
-  );
-
-  useEffect(() => {
-    window.addEventListener("storage", updateCartProductsCount);
-
-    return () => window.removeEventListener("storage", updateCartProductsCount);
-  }, []);
-
-  return cartProductsCount;
-  function updateCartProductsCount() {
-    setCartProductsCount(sessionStorage.length);
-  }
-}
 export default function Heading() {
   const [popupOpen, setPopupOpen] = useState(false);
 
   // const cartProductsCount = useRouteLoaderData("root") as number;
-  const cartProductsCount = useCountProductsCount();
+  const cartProductsCount = useCartProductsCount();
   useEffect(() => {
     document.body.style.overflow = popupOpen ? "hidden" : "auto";
   }, [popupOpen]);
@@ -40,9 +25,6 @@ export default function Heading() {
       <h1>
         <Link to="/">Mega Shop</Link>
       </h1>
-      <form action="">
-        <input type="search" name="product" id="product" />
-      </form>
       <nav>
         <ul>
           <li>
@@ -76,9 +58,6 @@ export default function Heading() {
               <img src="" alt="X" />
             </button>
           </div>
-          <form action="">
-            <input type="search" name="product" id="product" />
-          </form>
           <nav>
             <ul>
               <li>

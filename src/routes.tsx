@@ -5,6 +5,8 @@ import {
   Route,
   useLocation,
   ScrollRestoration,
+  useNavigate,
+  useNavigation,
 } from "react-router-dom";
 import Heading from "./components/heading/component";
 import Footer from "./components/footer/component";
@@ -16,12 +18,26 @@ import shopLoader from "./components/shop/loader.ts";
 import shopAction from "./components/shop/action.ts";
 import checkoutLoader from "./components/checkout/loader.ts";
 import productDetailedLoader from "./components/productDetailed/loader.ts";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
+import LoadingBar, { LoadingBarRef } from "react-top-loading-bar";
 function BasicLayout() {
+  const loadingBarRef = useRef<LoadingBarRef | null>(null);
+
+  const navigation = useNavigation();
+
+  useEffect(() => {
+    if (navigation.state === "loading") {
+      loadingBarRef.current?.continuousStart();
+    } else if (navigation.state === "idle") {
+      loadingBarRef.current?.complete();
+    }
+  }, [navigation.state]);
   return (
     <>
       <Heading />
+
+      <LoadingBar ref={loadingBarRef} color="#f11946" />
       <Outlet />
       <Footer />
       <ScrollRestoration />

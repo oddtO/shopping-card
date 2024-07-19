@@ -5,6 +5,10 @@
   display: flex;
   align-items: center;
   padding: $heading-padding;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  width: 100%;
 
   nav {
     height: 2em;
