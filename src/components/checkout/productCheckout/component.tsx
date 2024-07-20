@@ -1,6 +1,8 @@
 import NumberInput from "../../number-input/component";
 import styles from "./styles.module.scss";
 import type { ChangeCountFunction } from "../../number-input/component";
+import IconButton from "../../icon-button/component";
+import RemoveImg from "../../../assets/reshot-icon-trash-can-4STZDYFJLV.svg";
 export default function ProductCheckout({
   count,
   decCb,
@@ -36,14 +38,12 @@ export default function ProductCheckout({
             </p>
           </div>
           <div className={styles.controls}>
-            <button
-              onClick={deleteCb}
+            <IconButton
               className={styles.cancelButton}
-              data-testid={title + " " + "delete"}
-              type="button"
-            >
-              X
-            </button>
+              imgSrc={RemoveImg}
+              onClick={deleteCb}
+              ariaLabel={`Remove ${title}`}
+            />
             <NumberInput
               count={count}
               incCb={incCb}
@@ -54,14 +54,12 @@ export default function ProductCheckout({
           </div>
         </div>
         <div className={styles.lowScreenSizeControls}>
-          <button
+          <IconButton
             className={styles.cancelButton}
-            type="button"
-            data-testid={title + " " + "delete"}
+            imgSrc={RemoveImg}
             onClick={deleteCb}
-          >
-            X
-          </button>
+            ariaLabel={`Remove ${title}`}
+          />
           <NumberInput
             count={count}
             incCb={incCb}

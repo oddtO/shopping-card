@@ -24,6 +24,7 @@ export default function ProductDetailed() {
         ></CustomImage>
         <figcaption>
           <IconButton
+            ariaLabel="Go back"
             className={styles.goBackLink}
             onClick={() => navigate(-1)}
             imgSrc={ArrowLeftImg}

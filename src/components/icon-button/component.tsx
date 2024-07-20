@@ -3,14 +3,21 @@ import styles from "./styles.module.scss";
 export default function IconButton({
   className = "",
   imgSrc,
-  onClick = () => {},
+  onClick,
+  ariaLabel,
 }: {
   className?: string;
   imgSrc: string;
+
   onClick?: () => void;
+  ariaLabel: string;
 }) {
   return (
-    <button className={className + " " + styles.icon} onClick={onClick}>
+    <button
+      aria-label={ariaLabel}
+      className={className + " " + styles.icon}
+      onClick={onClick}
+    >
       <img src={imgSrc} alt="icon" />
     </button>
   );

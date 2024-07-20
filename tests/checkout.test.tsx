@@ -18,7 +18,6 @@ let user: ReturnType<typeof userEvent.setup>;
 it("no items placed in the cart case ", async () => {
   const renderData = renderComponent();
   user = renderData.user;
-
   const btns = await screen.findAllByRole("button", { name: /add to cart/i });
   const btn = btns[0];
 
@@ -240,7 +239,9 @@ async function getCheckoutItem(product: Product) {
   const price = screen.findByTestId(product.title + "-item-price");
   const image = screen.findByAltText(product.title);
 
-  const deleteBtn = screen.findAllByTestId(product.title + " " + "delete");
+  const deleteBtn = screen.findAllByRole("button", {
+    name: `Remove ${product.title}`,
+  });
   const decBtn = screen.findAllByTestId(product.title + " " + "decrement");
   const incBtn = screen.findAllByTestId(product.title + " " + "increment");
   const quantity = screen.findAllByTestId(product.title + " " + "value");

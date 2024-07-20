@@ -22,16 +22,32 @@ export default function Footer() {
         </p>{" "}
         <ul>
           <li>
-            <IconButton className={styles.icon} imgSrc={TwitterIcon} />
+            <IconButton
+              ariaLabel="Go to twitter"
+              className={styles.icon}
+              imgSrc={TwitterIcon}
+            />
           </li>
           <li>
-            <IconButton className={styles.icon} imgSrc={FacebookIcon} />
+            <IconButton
+              ariaLabel="Go to facebook"
+              className={styles.icon}
+              imgSrc={FacebookIcon}
+            />
           </li>
           <li>
-            <IconButton className={styles.icon} imgSrc={InstagramIcon} />
+            <IconButton
+              ariaLabel="Go to instagram"
+              className={styles.icon}
+              imgSrc={InstagramIcon}
+            />
           </li>
           <li>
-            <IconButton className={styles.icon} imgSrc={GithubIcon} />
+            <IconButton
+              ariaLabel="Go to github repository"
+              className={styles.icon}
+              imgSrc={GithubIcon}
+            />
           </li>
         </ul>
       </div>

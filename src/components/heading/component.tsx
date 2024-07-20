@@ -39,12 +39,16 @@ export default function Heading() {
 
           <li className={styles.alwaysVisible}>
             <Link to="checkout">
-              <IconButton imgSrc={CartImg} />
+              <IconButton ariaLabel="Go to cart" imgSrc={CartImg} />
             </Link>
             <output data-testid="item-count1">{cartProductsCount}</output>
           </li>
           <li className={styles.onNarrowVisible}>
-            <IconButton imgSrc={MenuImg} onClick={openPopup} />
+            <IconButton
+              ariaLabel="Open menu"
+              imgSrc={MenuImg}
+              onClick={openPopup}
+            />
           </li>
         </ul>
       </nav>
@@ -57,7 +61,11 @@ export default function Heading() {
       >
         <div className={popupStyles.popupContent}>
           <div className={popupStyles.cancelButton}>
-            <IconButton imgSrc={CloseImg} onClick={closePopup} />
+            <IconButton
+              ariaLabel="Close menu"
+              imgSrc={CloseImg}
+              onClick={closePopup}
+            />
           </div>
           <nav>
             <ul>
