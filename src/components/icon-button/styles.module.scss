@@ -1,0 +1,15 @@
+.icon {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+
+  > img {
+    width: 2.5em;
+    height: 2.5em;
+    object-fit: contain;
+    cursor: pointer;
+  }
+}

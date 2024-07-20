@@ -1,5 +1,10 @@
 import styles from "./styles.module.scss";
-
+import IconButton from "../icon-button/component";
+import TwitterIcon from "../../assets/reshot-icon-twitter-4EAXDHGYM5.svg";
+import FacebookIcon from "../../assets/reshot-icon-facebook-EAQUC4LBMV.svg";
+import InstagramIcon from "../../assets/reshot-icon-instagram-M2ZK3USTWR.svg";
+import GithubIcon from "../../assets/reshot-icon-github-NY46M9DGFU.svg";
+import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <footer className={styles.footer}>
@@ -16,20 +21,40 @@ export default function Footer() {
           quis! Aspernatur.
         </p>{" "}
         <ul>
-          <li>0</li>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
+          <li>
+            <IconButton className={styles.icon} imgSrc={TwitterIcon} />
+          </li>
+          <li>
+            <IconButton className={styles.icon} imgSrc={FacebookIcon} />
+          </li>
+          <li>
+            <IconButton className={styles.icon} imgSrc={InstagramIcon} />
+          </li>
+          <li>
+            <IconButton className={styles.icon} imgSrc={GithubIcon} />
+          </li>
         </ul>
       </div>
       <div className={styles.allLinks}>
         <div className={styles.linkGroup}>
           <h4>Shop</h4>
           <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
+            <li>
+              <Link to="/shop?category=electronics">electronics</Link>
+            </li>
+            <li>
+              <Link to="/shop?category=jewelery">jewelery</Link>
+            </li>
+            <li>
+              <Link to="/shop?category=men's clothing">
+                men&apos;s clothing
+              </Link>
+            </li>
+            <li>
+              <Link to="/shop?category=women's clothing">
+                women&apos;s clothing
+              </Link>
+            </li>
           </ul>
         </div>
         <div className={styles.linkGroup}>
@@ -38,10 +63,18 @@ export default function Footer() {
             <br /> Links
           </h4>
           <ul>
-            <li>Link 1</li>
-            <li>Link 2</li>
-            <li>Link 3</li>
-            <li>Link 4</li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="shop">Shop</Link>
+            </li>
+            <li>
+              <Link to="/checkout">Cart</Link>
+            </li>
+            <li>
+              <a href="https://github.com/oddtO/shopping-cart">Repository</a>
+            </li>
           </ul>
         </div>
       </div>

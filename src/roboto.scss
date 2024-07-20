@@ -1,0 +1,50 @@
+/* Thin */
+
+$path: "../src/assets";
+
+@font-face {
+  font-family: Roboto;
+  src: url("#{$path}/Roboto-Thin.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100;
+}
+
+/* Light */
+@font-face {
+  font-family: Roboto;
+  src: url("#{$path}/Roboto-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+}
+
+/* Normal */
+@font-face {
+  font-family: Roboto;
+  src: url("#{$path}/Roboto-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Medium */
+@font-face {
+  font-family: Roboto;
+  src: url("#{$path}/Roboto-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* Bold */
+@font-face {
+  font-family: Roboto;
+  src: url("#{$path}/Roboto-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Black */
+@font-face {
+  font-family: Roboto;
+  src: url("#{$path}/Roboto-Black.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 900;
+}

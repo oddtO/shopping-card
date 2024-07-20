@@ -6,6 +6,8 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import CustomImage from "../custom-image/component";
 import LoaderImg from "../../assets/loading-7528_256.gif";
 import { Link, useFetcher } from "react-router-dom";
+import ArrowLeftImg from "../../assets/reshot-icon-arrow-left-UZDAC2LESG.svg";
+import IconButton from "../icon-button/component";
 export default function ProductDetailed() {
   const item = useLoaderData() as Product;
 
@@ -21,9 +23,11 @@ export default function ProductDetailed() {
           loaderImg={LoaderImg}
         ></CustomImage>
         <figcaption>
-          <button className={styles.goBackLink} onClick={() => navigate(-1)}>
-            Go back
-          </button>
+          <IconButton
+            className={styles.goBackLink}
+            onClick={() => navigate(-1)}
+            imgSrc={ArrowLeftImg}
+          />
           <h2>{item.title}</h2>{" "}
           <RatingInfo
             rating={item.rating.rate}

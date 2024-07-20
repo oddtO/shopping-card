@@ -3,7 +3,10 @@ import popupStyles from "./popup.module.scss";
 import { useEffect, useState } from "react";
 import { Link, useRouteLoaderData } from "react-router-dom";
 import useCartProductsCount from "./use-cart-products-count";
-
+import IconButton from "../icon-button/component";
+import CartImg from "../../assets/reshot-icon-empty-cart-FH5UR2WGKN.svg";
+import MenuImg from "../../assets/reshot-icon-menu-EY6DUGZRCA.svg";
+import CloseImg from "../../assets/reshot-icon-close-circle-YE2TDJM6PL.svg";
 export default function Heading() {
   const [popupOpen, setPopupOpen] = useState(false);
 
@@ -35,13 +38,13 @@ export default function Heading() {
           </li>
 
           <li className={styles.alwaysVisible}>
-            <Link to="checkout">Cart</Link>
+            <Link to="checkout">
+              <IconButton imgSrc={CartImg} />
+            </Link>
             <output data-testid="item-count1">{cartProductsCount}</output>
           </li>
           <li className={styles.onNarrowVisible}>
-            <button type="button" onClick={openPopup}>
-              Menu
-            </button>
+            <IconButton imgSrc={MenuImg} onClick={openPopup} />
           </li>
         </ul>
       </nav>
@@ -54,9 +57,7 @@ export default function Heading() {
       >
         <div className={popupStyles.popupContent}>
           <div className={popupStyles.cancelButton}>
-            <button type="button" onClick={closePopup}>
-              <img src="" alt="X" />
-            </button>
+            <IconButton imgSrc={CloseImg} onClick={closePopup} />
           </div>
           <nav>
             <ul>

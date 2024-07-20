@@ -6,6 +6,11 @@
   background-color: #000;
   color: #fff;
 
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
   $padding-vertical: 2.5em;
 
   padding: $padding-vertical 5em;
@@ -56,6 +61,10 @@
       justify-content: center;
     }
   }
+}
+
+.icon {
+  font-size: 0.5em;
 }
 
 .description,
