@@ -1,9 +1,4 @@
 import type { Product } from "../src/use-product";
-type Category =
-  | "electronics"
-  | "jewelery"
-  | "men's clothing"
-  | "women's clothing";
 export const products: readonly Product[] = [
   {
     id: 1,

@@ -1,13 +1,10 @@
 import styles from "./styles.module.scss";
 import ShopItem from "../shop-item/component";
-import DummyImg from "../../assets/81fPKd-2AYL._AC_SL1500_.jpg";
 import { Product } from "../../use-product";
-import { useState } from "react";
 import {
   useLoaderData,
   useNavigate,
   createSearchParams,
-  Link,
   useLocation,
   useNavigation,
 } from "react-router-dom";

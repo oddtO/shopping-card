@@ -5,7 +5,7 @@ import type { Product } from "../../use-product";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import CustomImage from "../custom-image/component";
 import LoaderImg from "../../assets/loading-7528_256.gif";
-import { Link, useFetcher } from "react-router-dom";
+import { useFetcher } from "react-router-dom";
 import ArrowLeftImg from "../../assets/reshot-icon-arrow-left-UZDAC2LESG.svg";
 import IconButton from "../icon-button/component";
 export default function ProductDetailed() {

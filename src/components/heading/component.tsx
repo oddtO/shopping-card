@@ -1,7 +1,7 @@
 import styles from "./styles.module.scss";
 import popupStyles from "./popup.module.scss";
 import { useEffect, useState } from "react";
-import { Link, useRouteLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
 import useCartProductsCount from "./use-cart-products-count";
 import IconButton from "../icon-button/component";
 import CartImg from "../../assets/reshot-icon-empty-cart-FH5UR2WGKN.svg";

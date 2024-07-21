@@ -2,7 +2,7 @@ import { describe, vi, it, expect, beforeEach } from "vitest";
 import { routes } from "../src/routes";
 import { createMemoryRouter } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { RouterProvider } from "react-router-dom";
 import { mockedFetch } from "./mocks";
 import { products } from "./shop-products";
@@ -212,15 +212,6 @@ function renderComponent() {
   const user = userEvent.setup();
   const renderObj = render(<RouterProvider router={router} />);
   return { ...renderObj, user };
-}
-
-async function removeProduct(
-  index: number,
-  items: Awaited<ReturnType<typeof getCheckoutItem>>[],
-  products: Product[],
-) {
-  await user.click(items[index].deleteBtn[0]);
-  products.splice(index, 1);
 }
 
 function getSubtotalAndTotal() {

@@ -1,4 +1,3 @@
-import { createSearchParams } from "react-router-dom";
 export default function loader({ request }: { request: Request }) {
   const categoriesPromise = fetch(
     "https://fakestoreapi.com/products/categories",

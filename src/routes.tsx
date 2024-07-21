@@ -1,11 +1,8 @@
 import {
   Outlet,
-  createBrowserRouter,
   createRoutesFromElements,
   Route,
-  useLocation,
   ScrollRestoration,
-  useNavigate,
   useNavigation,
 } from "react-router-dom";
 import Heading from "./components/heading/component";

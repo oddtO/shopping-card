@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-		    "plugins": [{ "name": "typescript-plugin-css-modules" }],
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
 
     "target": "ES2020",
     "useDefineForClassFields": true,
@@ -21,13 +21,8 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
-		  },
-  "include": ["src", 
-  "**/*.ts",
-    "**/*.tsx",
-    "./vitest.setup.ts"
+  },
+  "include": ["src", "**/*.ts", "**/*.tsx", "./vitest.setup.ts"]
 
-	],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  // "references": [{ "path": "./tsconfig.node.json" }]
 }
-

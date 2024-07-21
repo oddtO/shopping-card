@@ -1,5 +1,4 @@
 import "./reset.css";
-import { useState } from "react";
 // import { useProducts } from "./use-product";
 import { routes } from "./routes";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";

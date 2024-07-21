@@ -1,4 +1,5 @@
 //package without types
+// @ts-ignore
 import { useImage } from "react-img-placeholder";
 
 export default function CustomImage({

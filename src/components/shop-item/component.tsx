@@ -1,10 +1,9 @@
-import styles, { addToCartBtn } from "./styles.module.scss";
-import StarRating from "./star-rating";
+import styles from "./styles.module.scss";
 import RatingInfo from "../rating-info/component";
 import CustomButton from "../custom-button/component";
 import CustomImage from "../custom-image/component";
 import LoadingSpinner from "../../assets/loading-7528_256.gif";
-import { Link, Form, useFetcher } from "react-router-dom";
+import { Link, useFetcher } from "react-router-dom";
 export default function ShopItem({
   id,
   imgSrc,
