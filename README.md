@@ -1,30 +1,110 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Deployment
 
-## Expanding the ESLint configuration
+* [See on netlify](https://vermillion-cupcake-49810c.netlify.app/)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+<!-- GETTING STARTED -->
+## Getting Started
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Prerequisites
+
+You will need `Node.js` and `npm` installed globally on your machine.
+* [Downloading and installing Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/oddtO/shopping-cart.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Run tests
+   ```sh
+   npm run test
+   ```
+4. Run dev server on http://localhost:5173
+   ```sh
+   npm run dev
+   ```
+5. Compile for production
+   ```sh
+   npm run build
+   ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Features
+
+* Has home page, products page, cart page.
+* When navigating, loading bar at the top is present.
+* Use external api to fetch products.
+* Use session storage to store cart items.
+
+
+### Products (shop) page
+* Several product categories.
+* Each category has a list of products.
+* Sort by category and id.
+* Gray out available product list while refetching(sorting).
+* Loading spinner when product image is loading.
+* Sort state stored in the URL.
+* Add or remove products from cart.
+
+
+
+
+
+### Cart page
+* Display products in cart.
+* Increase, decrease product quantity.
+* Remove product from cart.
+* Display total price.
+* Display the amount of products in cart near icon.
+
+### Built With
+
+#### Technologies
+
+* Typescript
+* React
+* react-router-dom
+* SCSS
+* HTML
+* Vite
+* Vitest
+* React Testing Library
+* Git
+
+
+
+
+
+
+<!-- AUTHORS -->
+## Author
+
+* [Github](https://github.com/oddtO)
+* [LinkedIn](https://www.linkedin.com/in/dmytro-yefimov-316690207/)
+* [Dou](https://dou.ua/users/oddto/)
+<p align="right">(<a href="#top">back to top</a>)</p>
