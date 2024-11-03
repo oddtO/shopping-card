@@ -82,7 +82,7 @@ You will need `Node.js` and `npm` installed globally on your machine.
 * Display total price.
 * Display the amount of products in cart near icon.
 
-### Built With
+## Built With
 
 #### Technologies
 
