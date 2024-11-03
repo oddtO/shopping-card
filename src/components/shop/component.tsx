@@ -68,8 +68,8 @@ export default function Shop() {
               changeLoadParams({ sort: event.target.value });
             }}
           >
-            <option value="asc">Ascending</option>
-            <option value="desc">Descending</option>
+            <option value="asc">Oldest</option>
+            <option value="desc">Newest</option>
           </select>
         </form>
         <h3>{items.length} items</h3>
