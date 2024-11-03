@@ -142,13 +142,13 @@ $white-bluesh: #f1f1fb;
 
       border-radius: 0.5em;
       width: $item-width;
-      height: $item-width / 0.8;
+      height: math.div($item-width, 0.8);
 
       @media screen and (width <= $relative-to-screen-threshold) {
         $small-item-width: 47vw;
 
         width: $small-item-width;
-        height: $small-item-width / 0.55;
+        height: math.div($small-item-width, 0.55);
         font-size: 4vw;
       }
 
